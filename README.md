@@ -14,20 +14,19 @@ edit `clangformat` so that CLANGFMT points to where ever `clang-format` is locat
 `clangformat --help` for usage details.
 
 `clangformat <directory> --test`
-	- show which files will be formatted in `<directory>`.
-	- it is advisable to run this once to decide which files should be added to `.clang-format-ignore` before actually formatting the source tree.
+ * show which files will be formatted in `<directory>`.
+ * it is advisable to run this once to decide which files should be added to `.clang-format-ignore` before actually formatting the source tree.
 
 `clangformat <directory>`
-	- format in place (`clang-format -i`) using the style defined in `.clang-format` recursively through `<directory>`.
-
-	e.g. `clangformat Source`
+ * format in place (`clang-format -i`) using the style defined in `.clang-format` recursively through `<directory>`.
+ * e.g. `clangformat Source`
 
 ### Excluding files
 
 `.clang-format-ignore`
-	- should be in the same directory that you issue `clangformat` from.
-	- should contain one per line examples of files to ignore, wildcards are allowed, and in fact are wrapped by wildcards by default.
-	e.g. `sqlite3.*` would match `Source/util/sqlite3.c` **and** `Source/libs/include/sqlite3.h`
+ * should be in the same directory that you issue `clangformat` from.
+ * should contain one per line examples of files to ignore, wildcards are allowed, and in fact are wrapped by wildcards by default.
+ * e.g. `sqlite3.*` would match `Source/util/sqlite3.c` **and** `Source/libs/include/sqlite3.h`
 
 ## Contributing
 
