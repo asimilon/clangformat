@@ -1,5 +1,5 @@
 # clangformat
-Simple BASH script to recursively clang-format a source tree, with option to exclude files.
+Simple BASH script to recursively clang-format a source tree, with option to ignore/exclude files.
 
 ### Rationale
 
@@ -25,9 +25,10 @@ edit `clangformat` so that CLANGFMT points to where ever `clang-format` is locat
 
 `.clang-format-ignore`
  * should be in the same directory that you issue `clangformat` from.
- * should contain one per line examples of files to ignore, wildcards are allowed, and in fact are wrapped by wildcards by default.
- * e.g. `sqlite3.*` would match `Source/util/sqlite3.c` **and** `Source/libs/include/sqlite3.h`
+ * should contain one per line examples of files to ignore, `*` wildcards are allowed.
+ * start a line with `#` for comments.
+ * e.g. `*sqlite3.*` would match `Source/util/sqlite3.c` **and** `Source/libs/include/sqlite3.h`
 
 ## Contributing
 
-I'm sure this could be improved upon, my BASH chops aren't all that amazing, but this works for me, so I wanted to share it!  I wouldn't be surprised if it was hugely inefficient on large code bases.  It could almost certainly be improved by being made more flexible.  Another improvement would be to search upwards in the directory hierarchy for the `.clang-format-ignore` file the same way that `clang-format` searches for `.clang-format` if not present in the current directory. Allowing  `.clang-format-ignore` to contain empty lines and perhaps comments would also be useful.  PRs gladly accepted.
+I'm sure this could be improved upon, my BASH chops aren't all that amazing, but this works for me, so I wanted to share it!  I wouldn't be surprised if it was hugely inefficient on large code bases.  It could almost certainly be improved by being made more flexible.  Another improvement would be to search upwards in the directory hierarchy for the `.clang-format-ignore` file the same way that `clang-format` searches for `.clang-format` if not present in the current directory.  PRs gladly accepted.

@@ -32,9 +32,11 @@ for F in `find "$1"`; do
 	DOFMT=TRUE
 	if [[ -n $EXCLUDES ]]; then
 		while read -r EXCL; do
-			if [[ $F == *$EXCL* ]]; then
-				DOFMT=FALSE
-				break
+			if [[ -n $EXCL && $EXCL != /#* ]]; then
+				if [[ $F == $EXCL ]]; then
+					DOFMT=FALSE
+					break
+				fi
 			fi
 		done <<< "$EXCLUDES"
 	fi
